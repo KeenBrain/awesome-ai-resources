@@ -1,0 +1,31 @@
+request_id,date,customer_name,segment,request_summary,product_line,votes,revenue_at_risk,status,priority
+FR-001,2025-08-12,CallVault,enterprise,Sub-200ms voice agent latency,Voice Agents,67,480000,in-progress,critical
+FR-002,2025-08-20,Mia Chen,creator,Voice clone model version pinning,Voice Studio,43,0,backlog,high
+FR-003,2025-08-28,NovaCare Health,enterprise,SOC 2 Type II compliance documentation,Voice Agents,52,720000,in-progress,critical
+FR-004,2025-09-05,Sam Reeves,game-dev,Emotion controls for generated voices,Voice Studio,38,45000,research,high
+FR-005,2025-09-10,TrueNorth Insurance,enterprise,Voice agent response guardrails and policy controls,Voice Agents,48,350000,planned,critical
+FR-006,2025-09-15,Meridian Telecom,enterprise,Voice agent interruption handling,Voice Agents,55,560000,planned,high
+FR-007,2025-09-22,PodcastPro Network,creator,Bulk voice generation with scene direction,Voice Studio,29,85000,backlog,medium
+FR-008,2025-09-28,Apex Financial,enterprise,Per-customer voice data isolation,Voice Agents,41,290000,in-progress,high
+FR-009,2025-10-03,Marcus Webb (internal),enterprise,Simple 3-tier pricing model,Platform,36,3750000,research,high
+FR-010,2025-10-08,CallVault,enterprise,Real-time conversation monitoring dashboard,Voice Agents,44,480000,planned,high
+FR-011,2025-10-12,Community contributors,community,Better Open Voice fine-tuning documentation,Open Voice,31,0,backlog,low
+FR-012,2025-10-18,Sam Reeves,game-dev,Stylized voice options (non-realistic),Voice Studio,22,45000,research,medium
+FR-013,2025-10-22,NovaCare Health,enterprise,HIPAA compliance for healthcare voice agents,Voice Agents,28,720000,backlog,high
+FR-014,2025-10-28,Jordan Ellis (internal),enterprise,Voice consent verification framework,Platform,46,0,planned,critical
+FR-015,2025-11-02,Mia Chen,creator,Creator pricing tier protection (no price increases),Voice Studio,34,0,backlog,medium
+FR-016,2025-11-08,TrueNorth Insurance,enterprise,Enterprise SLA with uptime guarantees,Voice Agents,39,350000,research,high
+FR-017,2025-11-12,Indie Game Dev Community,game-dev,Game developer pricing bundle,Platform,19,120000,backlog,low
+FR-018,2025-11-15,Multiple enterprise,enterprise,Multi-turn conversation handling improvements,Voice Agents,51,890000,planned,critical
+FR-019,2025-11-20,Meridian Telecom,enterprise,Angry caller de-escalation capability,Voice Agents,33,560000,research,medium
+FR-020,2025-11-25,PodcastPro Network,creator,Multi-voice scene generation (conversations),Voice Studio,26,85000,backlog,medium
+FR-021,2025-11-28,Multiple creators,creator,Soundscape legal clarity on commercial use,Soundscape,42,0,in-progress,high
+FR-022,2025-12-02,Apex Financial,enterprise,Voice agent audit logging,Voice Agents,37,290000,planned,high
+FR-023,2025-12-05,Community contributors,community,Open Voice model fine-tuning API,Open Voice,24,0,research,low
+FR-024,2025-12-10,Sam Reeves,game-dev,Batch dialogue generation pipeline,Voice Studio,18,45000,backlog,medium
+FR-025,2025-12-12,Multiple enterprise,enterprise,Enterprise dedicated landing page and positioning,Platform,30,3750000,planned,medium
+FR-026,2025-12-15,NovaCare Health,enterprise,Voice agent custom vocabulary and pronunciation,Voice Agents,35,720000,backlog,medium
+FR-027,2025-12-18,Mia Chen,creator,Voice clone quality regression fix,Voice Studio,47,0,in-progress,critical
+FR-028,2025-12-22,CallVault (churned),enterprise,Voice agent call recording and transcription,Voice Agents,40,0,backlog,medium
+FR-029,2025-12-28,TrueNorth Insurance,enterprise,API rate limiting controls and usage alerts,Voice Agents,27,350000,planned,medium
+FR-030,2025-12-30,Marcus Webb (internal),enterprise,Enterprise customer case studies and references,Platform,32,3750000,research,high

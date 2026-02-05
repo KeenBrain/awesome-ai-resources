@@ -1,0 +1,16 @@
+customer_id,customer_name,segment,product_line,arr,signup_date,churn_date,tenure_months,primary_reason,secondary_reason,competitor_mentioned,exit_interview_done,feedback_summary
+CH-001,CallVault,enterprise,Voice Agents,480000,2025-06-01,2025-11-15,5,latency,ai-hallucination,Amazon Connect,yes,"800ms latency unacceptable for production. AI gave incorrect refund info costing $12K. No guardrails. No SOC 2. Switched to Amazon Connect."
+CH-002,VoicePath Solutions,enterprise,Voice Agents,220000,2025-05-15,2025-10-30,5,no-soc2,latency,ElevenLabs,yes,"Procurement rejected us without SOC 2. Latency was also a concern. Moved to ElevenLabs."
+CH-003,PodStream Media,creator,Voice Studio,3600,2024-09-01,2025-11-01,14,quality-degradation,pricing,ElevenLabs,yes,"Voice clone quality changed after model update. Two months of asking for a fix. Gave up and switched."
+CH-004,Apex Financial,enterprise,Voice Agents,290000,2025-07-01,2025-12-01,5,no-soc2,compliance,Resemble AI,yes,"Security review rejected us. No SOC 2, no data residency options, unclear AI data handling. Went to Resemble."
+CH-005,SoundForge Games,game-dev,Soundscape,8400,2025-01-15,2025-10-15,9,legal-uncertainty,pricing,none,no,
+CH-006,Meridian Telecom,enterprise,Voice Agents,560000,2025-04-01,2025-12-15,8,latency,interruption-handling,Amazon Connect,yes,"Latency issues caused customer complaints at scale. Voice agent couldn't handle interruptions. Despite best voice quality we've tested, enterprise readiness too low."
+CH-007,AudioCraft Studio,creator,Voice Studio,1800,2025-03-01,2025-09-20,6,pricing,low-value,Play.ht,no,
+CH-008,NightOwl Podcasting,creator,Voice Studio,2400,2024-11-01,2025-11-10,12,quality-degradation,creator-neglect,ElevenLabs,yes,"Model update changed my voice clone. Felt like creators were being ignored for enterprise. Friend recommended ElevenLabs."
+CH-009,SecureCall Inc,enterprise,Voice Agents,180000,2025-08-01,2025-12-20,4,no-soc2,latency,Google CCAI,yes,"Compliance team killed the deal after POC. No SOC 2, no HIPAA path, no SLAs. Defaulted to Google."
+CH-010,RetroWave Studios,game-dev,Soundscape,4800,2025-02-01,2025-11-01,9,legal-uncertainty,none,none,yes,"Paused Soundscape after Universal Music news. Too risky for our game's soundtrack. Will reconsider if legal is resolved."
+CH-011,QuickResolve Support,enterprise,Voice Agents,120000,2025-09-01,2025-12-30,3,latency,ai-hallucination,none,yes,"Voice agent response time was 900ms. Agent gave wrong product information twice. Lost confidence in AI reliability."
+CH-012,Indie Voice Actor,creator,Voice Studio,600,2025-06-01,2025-10-01,4,pricing,none,none,no,
+CH-013,TalkPoint Solutions,enterprise,Voice Agents,340000,2025-05-01,2025-11-20,6,latency,no-guardrails,ElevenLabs,yes,"Latency and lack of response guardrails. Agent told customer incorrect policy info. No way to restrict agent responses."
+CH-014,BeatMaker Collective,creator,Soundscape,1200,2024-12-01,2025-10-20,10,legal-uncertainty,none,none,no,
+CH-015,GlobalConnect,enterprise,Voice Agents,410000,2025-06-15,2025-12-10,6,no-soc2,latency,Amazon Connect,yes,"Our CISO vetoed the deployment. No SOC 2, no data processing agreement, no incident response SLA. Moved to Amazon Connect despite inferior voice quality."
