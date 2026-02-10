@@ -48,7 +48,7 @@
         ```
 - Clone this repository to your local machine: `git clone https://github.com/KeenBrain/awesome-ai-resources` or download the ZIP file from Github and extract it.
 
-- Open a terminal and navigate to the project directory:
+- Open a terminal and navigate to the project directory: `cd awesome-ai-resources/evals/evals_opik_tutorial`
 
 - Create a virtual environment (optional but recommended): `python3 -m venv venv`
 
