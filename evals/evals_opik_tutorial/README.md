@@ -37,30 +37,7 @@
     4. Restart PowerShell, then verify Python installation: `python --version`
 
 
-## Simple Setup Instructions:
-- Create a `.env` file in the project root (use `.env.example` as a reference):
-    - Copy `.env.example` to `.env`
-    - Fill in your API keys in your `.env` file, it should look like this:
-        ```
-            OPIK_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxx
-
-            OPENAI_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxx
-        ```
-- Clone this repository to your local machine: `git clone https://github.com/KeenBrain/awesome-ai-resources` or download the ZIP file from Github and extract it.
-
-- Open a terminal and navigate to the project directory: `cd awesome-ai-resources/evals/evals_opik_tutorial`
-
-- Create a virtual environment (optional but recommended): `python3 -m venv venv`
-
-- Activate the virtual environment: `source venv/bin/activate`
-
-- Now, you're in your virtual environment, and you can proceed to install the required dependencies.
-
-- Install the required dependencies using pip (this should take 1-2 minutes to complete): `pip install python-dotenv opik` 
-
-
-
-## Setup Instructions
+## Simple Setup Instructions
 
 1. **Clone the repository**
     - `git clone https://github.com/KeenBrain/awesome-ai-resources`
