@@ -111,9 +111,17 @@ Claude Code starts an interactive session in your terminal. It can see your proj
 
 ## Part B: Analysis Prompts
 
-The prompts below follow a structured methodology that mirrors how an experienced data analyst works: start broad, get specific, investigate anomalies, then communicate findings. Each prompt builds on the previous one.
+The prompts below follow a structured methodology that mirrors how an experienced data analyst works: start broad, verify quality, segment the data, hunt for anomalies, then verify the findings. Each prompt builds on the previous one.
 
 > **How Claude Code differs from Claude.ai:** In Claude Code, you don't upload files — Claude already has access to your project directory. It writes and executes real Python scripts, which you can inspect, modify, and rerun. The code and outputs are saved in your project, making your analysis fully reproducible.
+
+### Before You Begin
+
+Type this instruction at the start of your Claude Code session, before running any analysis prompts. It constrains Claude's output to keep responses fast and focused:
+
+```
+For all analysis in this session: write concise scripts, print only key numbers and tables (no full dataframes), and keep your explanations to 2-3 sentences per finding.
+```
 
 ### Prompt 1: Understand the Shape of the Data
 
@@ -145,27 +153,7 @@ Give me summary statistics for the numerical columns, broken down by plan type (
 
 **What to look for:** Differences in session duration, actions per session, and how the spread (standard deviation) compares across plan types.
 
-### Prompt 4: Explore User Behavior Patterns
-
-```
-Which features are most popular for each plan type? Are there patterns in how different user segments use the product?
-```
-
-**Why this matters:** Understanding which features each segment gravitates toward reveals product-market fit, potential upsell opportunities, and features that may be underused.
-
-**What to look for:** Feature preferences by plan type, whether certain features are exclusive to certain plans, and unexpected usage patterns.
-
-### Prompt 5: Analyze Trends Over Time
-
-```
-Show me daily active users and total sessions over the 30-day period. Are there any trends, spikes, or dips? Include a visualization.
-```
-
-**Why add time?** Cross-sectional summaries miss temporal patterns. A spike on a Tuesday or a gradual decline over the month tells a completely different story than the averages alone.
-
-**What to look for:** Day-of-week patterns, any sudden changes in activity, and whether the trend is stable, growing, or declining.
-
-### Prompt 6: Detect Anomalies
+### Prompt 4: Detect Anomalies
 
 ```
 Are there any users with suspiciously high activity that might be bots? Are there any other anomalies or outliers in the data?
@@ -175,27 +163,7 @@ Are there any users with suspiciously high activity that might be bots? Are ther
 
 **What to look for:** Users with extremely high action counts but short sessions (possible bots), unusual spikes in specific features, or geographic anomalies.
 
-### Prompt 7: Compare Segments
-
-```
-How do mobile vs. desktop users behave differently? What about users across different countries? Create visualizations to show the comparisons.
-```
-
-**Why segment further?** Device and geography can reveal infrastructure issues (e.g., mobile users drop off faster) or market differences (e.g., one country has unusually low engagement).
-
-**What to look for:** Session duration differences by device, feature preferences by country, and whether any segment is disproportionately represented.
-
-### Prompt 8: Dig Deeper Into Findings
-
-```
-Based on everything you've found so far, what are the most interesting or surprising patterns? Dig deeper into the top 2-3 findings.
-```
-
-**Why this prompt?** This is where Claude Code shines. Instead of manually writing follow-up queries, you ask it to synthesize what it's already found and investigate further. This is the iterative, conversational power of working with an AI analyst.
-
-**What to look for:** Connections between findings, root causes behind anomalies, and insights that weren't obvious from any single prompt.
-
-### Prompt 9: Verify a Claim
+### Prompt 5: Verify a Claim
 
 ```
 Pick the most important numerical claim from your analysis and show me the exact calculation. Walk me through the code step by step.
@@ -213,7 +181,7 @@ Pick the most important numerical claim from your analysis and show me the exact
 2. **Iterate and follow up.** Don't just accept the first answer. Say "dig deeper," "why is that?," or "can you break that down by plan type?" The conversation is the analysis.
 3. **Inspect the code.** Claude Code generates real Python scripts. Read them. Modify them. Rerun them. This is how you learn and how you catch mistakes.
 4. **Ask for visualizations explicitly.** Claude Code can create and save charts as image files in your project. Ask for them when a visual would communicate better than numbers.
-5. **Always verify key claims.** Use Prompt 9 as a habit, not just a bonus step. Trust but verify.
+5. **Always verify key claims.** Use Prompt 5 as a habit, not just a bonus step. Trust but verify.
 
 ---
 
