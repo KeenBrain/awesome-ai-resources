@@ -1,5 +1,14 @@
 """
 evaluation_demo.py - Automatically evaluate LLM outputs
+
+Required Pre-requisites: Go through the README.md and set up your environment with the required API keys.
+
+Once you are in your virtual environment and have installed the dependencies, run this script using the following command in your terminal:
+- Mac/Linux: `python3 evaluation_demo.py`
+- Windows: `python evaluation_demo.py`
+
+This script demonstrates how to use Opik's evaluation framework to automatically evaluate the outputs of a language model based on a set of test cases.
+We define a simple Q&A function `answer_question` that takes a question and context, and generates an answer using the OpenAI API. We then create a list of test cases, each containing an input question, context, and (optionally) an expected output.
 """
 import os
 from dotenv import load_dotenv

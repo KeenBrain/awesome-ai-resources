@@ -1,3 +1,11 @@
+"""
+Required Pre-requisites: Go through the README.md and set up your environment with the required API keys.
+
+Once you are in your virtual environment and have installed the dependencies, run this script using the following command in your terminal:
+- Mac/Linux: `python3 test_opik_setup.py`
+- Windows: `python test_opik_setup.py`
+
+"""
 import os
 from dotenv import load_dotenv
 load_dotenv()

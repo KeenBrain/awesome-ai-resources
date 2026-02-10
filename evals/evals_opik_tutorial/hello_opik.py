@@ -1,5 +1,13 @@
 """
 hello_opik.py - Your very first Opik trace
+
+Required Pre-requisites: Go through the README.md and set up your environment with the required API keys.
+
+Once you are in your virtual environment and have installed the dependencies, run this script using the following command in your terminal:
+- Mac/Linux: `python3 hello_opik.py`
+- Windows: `python hello_opik.py`
+
+This is a simple demo to show how to create your first trace with Opik. The function `ask_question` is decorated with `@opik.track`, which means that every time you call this function, a new trace will be created in your Opik dashboard. This allows you to see the details of each call, including the input parameters, output, and any errors that may occur.
 """
 import os
 from dotenv import load_dotenv
