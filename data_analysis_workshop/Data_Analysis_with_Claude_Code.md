@@ -111,7 +111,7 @@ Claude Code starts an interactive session in your terminal. It can see your proj
 
 ## Part B: Analysis Prompts
 
-The prompts below follow a structured methodology that mirrors how an experienced data analyst works: start broad, verify quality, segment the data, hunt for anomalies, then verify the findings. Each prompt builds on the previous one.
+The prompts below follow a structured methodology that mirrors how an experienced data analyst works: start broad, verify quality, segment the data, investigate specific concerns, then verify the findings. Each prompt builds on the previous one.
 
 > **How Claude Code differs from Claude.ai:** In Claude Code, you don't upload files — Claude already has access to your project directory. It writes and executes real Python scripts, which you can inspect, modify, and rerun. The code and outputs are saved in your project, making your analysis fully reproducible.
 
@@ -133,35 +133,35 @@ Load the CSV file in data/saas_product_usage.csv and give me an overview. How ma
 
 **What to look for:** Column names, data types (numeric vs. categorical), the date range, and how the data is structured (one row per session, per user, per day?).
 
-### Prompt 2: Check Data Quality
+### Prompt 2: Check Data Quality and Flag Anomalies
 
 ```
-Are there any missing values, duplicates, or data quality issues? Check for anything that could affect our analysis.
+Are there any missing values, duplicates, or data quality issues? Also flag any obvious anomalies — users with suspiciously high activity, impossible values, or anything that looks like bot behavior.
 ```
 
-**Why this matters:** Dirty data leads to wrong conclusions. This prompt catches problems early — missing values, impossible numbers, duplicate records — before they silently distort your results.
+**Why combine quality and anomalies?** Data quality checks and anomaly detection go hand in hand. A user with 500 actions in a 1-minute session isn't just an outlier — it's a data quality signal. Catching these together gives you a clearer picture of what's real and what's noise.
 
-**What to look for:** Null counts per column, duplicate rows, values that seem out of range (e.g., negative session durations or impossibly high action counts).
+**What to look for:** Null counts per column, duplicate rows, values that seem out of range (e.g., negative session durations), and users with extremely high action counts relative to their session duration — a classic sign of bot activity.
 
-### Prompt 3: Get Summary Statistics
-
-```
-Give me summary statistics for the numerical columns, broken down by plan type (Free, Pro, Enterprise). What stands out?
-```
-
-**Why segment by plan?** Averages across the whole dataset can hide important differences. Breaking down by plan type reveals whether Free users behave fundamentally differently from Enterprise users.
-
-**What to look for:** Differences in session duration, actions per session, and how the spread (standard deviation) compares across plan types.
-
-### Prompt 4: Detect Anomalies
+### Prompt 3: Summary Statistics with Visualizations
 
 ```
-Are there any users with suspiciously high activity that might be bots? Are there any other anomalies or outliers in the data?
+Give me summary statistics for the numerical columns, broken down by plan type (Free, Pro, Enterprise). What stands out? Save charts as .png files showing the key comparisons.
 ```
 
-**Why look for anomalies?** Outliers can be the most interesting part of a dataset — or they can be data errors that skew your analysis. Either way, you need to find them.
+**Why segment by plan?** Averages across the whole dataset can hide important differences. Breaking down by plan type reveals whether Free users behave fundamentally differently from Enterprise users. Adding visualizations makes the patterns immediately visible.
 
-**What to look for:** Users with extremely high action counts but short sessions (possible bots), unusual spikes in specific features, or geographic anomalies.
+**What to look for:** Differences in session duration and actions per session across plan types, how the spread (standard deviation) compares, and whether the charts reveal patterns that the numbers alone don't make obvious.
+
+### Prompt 4: Segment by Country and Look for Churn Signals
+
+```
+Break down engagement metrics by country. Are there any regions with declining activity, unusually low session durations, or other signs of churn? Visualize the comparison.
+```
+
+**Why segment by geography?** Global averages can mask serious regional problems. One country might be thriving while another is quietly churning. This is the kind of insight a product manager needs to act on quickly.
+
+**What to look for:** Countries with significantly lower engagement than others, declining activity trends in specific regions, and whether any market shows signs of user drop-off that warrants investigation.
 
 ### Prompt 5: Verify a Claim
 
@@ -180,7 +180,7 @@ Pick the most important numerical claim from your analysis and show me the exact
 1. **Be specific about file paths.** Claude Code works from your project directory. Reference files as `data/saas_product_usage.csv`, not by uploading them.
 2. **Iterate and follow up.** Don't just accept the first answer. Say "dig deeper," "why is that?," or "can you break that down by plan type?" The conversation is the analysis.
 3. **Inspect the code.** Claude Code generates real Python scripts. Read them. Modify them. Rerun them. This is how you learn and how you catch mistakes.
-4. **Ask for visualizations explicitly.** Claude Code can create and save charts as image files in your project. Ask for them when a visual would communicate better than numbers.
+4. **Ask for visualizations explicitly.** Claude Code can create and save charts as .png files in your project. Ask for them when a visual would communicate better than numbers.
 5. **Always verify key claims.** Use Prompt 5 as a habit, not just a bonus step. Trust but verify.
 
 ---
