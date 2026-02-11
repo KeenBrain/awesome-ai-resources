@@ -16,7 +16,6 @@ load_dotenv()
 
 import opik
 opik.configure(api_key=os.getenv("OPIK_API_KEY"))
-os.environ["OPIK_PROJECT_NAME"] = "lets_try_evals_with_opik"
 
 from opik.evaluation import evaluate
 from opik.evaluation.metrics import Hallucination, AnswerRelevance

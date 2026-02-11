@@ -21,7 +21,6 @@ load_dotenv()
 
 import opik
 opik.configure(api_key=os.getenv("OPIK_API_KEY"))
-os.environ["OPIK_PROJECT_NAME"] = "lets_try_evals_with_opik"
 
 from openai import OpenAI
 client = OpenAI()

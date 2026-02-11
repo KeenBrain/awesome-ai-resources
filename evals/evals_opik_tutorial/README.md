@@ -50,28 +50,42 @@
     - Mac/Linux: `python3 -m venv venv`
     - Windows: `python -m venv venv`
 
-3. **Activate the virtual environment**
+4. **Activate the virtual environment**
     - Mac/Linux: `source venv/bin/activate`
     - Windows: `venv\Scripts\activate`
     - Now you're in your virtual environment, and you can proceed to install the required dependencies.
 
-4. **Install dependencies** (1-2 minutes)
+5. **Install dependencies** (1-2 minutes)
     - `pip install python-dotenv opik`
 
-5. **Set up your API keys**
+6. **Set up your API keys**
     - Copy `.env.example` to `.env`
     - Fill in your keys:
 ```
       OPIK_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxx
+      OPIK_PROJECT_NAME=lets_try_evals_with_opik
       OPENAI_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-6. **Verify your setup**
-    - Mac/Linux: `python3 test_opik_setup.py`
-    - Windows: `python test_opik_setup.py`
+7. **Verify your setup**
+    - Mac/Linux: `python3 0_test_opik_setup.py`
+    - Windows: `python 0_test_opik_setup.py`
     - You should see something like this:
 ```
       ✓ Opik API key: zFUyAnU90E...
       ✓ OpenAI API key: sk-proj-m7...
       🎉 Setup complete! You're ready to go.
 ```
+
+## Demo Scripts
+
+Once your setup is verified, you can run the following demo scripts:
+
+- **`1_hello_opik.py`** — A simple intro to Opik, great starting point.
+- **`2_rag_demo.py`** — Demonstrates evaluations for a Retrieval-Augmented Generation (RAG) pipeline.
+- **`3_evaluation_demo.py`** — Demonstrates how to run evaluations with Opik.
+- **`4_moderation_demo.py`** — Shows how to use Opik for content moderation evaluations.
+
+Run any script with:
+- Mac/Linux: `python3 <script_name>.py`
+- Windows: `python <script_name>.py`
