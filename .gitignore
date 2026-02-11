@@ -1,5 +1,6 @@
 .env
 **/.env
+**/.encrypted_env_files/
 **/venv*
 **/.DS_Store
 **/__pycache__/
