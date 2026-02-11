@@ -1,0 +1,92 @@
+# README
+
+## Overview
+- For this tutorial, we will be using Opik (by Comet) as our primary tool for running AI evaluations (aka Evals).
+- Opik (by Comet) is a powerful tool that provides access to a wide range of datasets and models for machine learning and data science. It offers a user-friendly interface and robust API for seamless integration into your projects.
+- Opik is 100% free and open source. The hosted version of Opik (on Comet.com) is also free to use (within limits), but you can also self-host Opik if you prefer.
+
+## Required Prerequisites:
+- Make sure you have python 3.8 or higher installed on your system. You should be able to check this by running `python --version` or `python3 --version` in your terminal. If you don't, the steps to install Python are provided below for both Mac and Windows.
+- Make sure you have a valid GitHub Personal Access Token. GitHub Models provides free access to AI models (GPT-4o, Claude, Llama, etc.) via an OpenAI-compatible API.
+    - Go to https://github.com/settings/tokens
+    - Click "Generate new token (classic)"
+    - Give it a name like `evals_opik_tutorial_github_copilot`
+    - No special scopes are required — the default access is sufficient for GitHub Models
+    - Click **Generate token** and copy it
+    - Alternatively, you can browse available models at https://github.com/marketplace/models and click "Get API key" to generate a token directly.
+- Make sure you have a valid Opik API key. You can obtain one (for free) from the Comet/Opik website.
+    - Go to https://www.comet.com/opik
+    - Sign up for a free account or log in
+    - Go to https://www.comet.com/account-settings/apiKeys
+    - Create a new API key, and copy it immediately
+- Copy your GitHub Token and Opik API key, and store them securely. You will need to set them as environment variables in the following steps.
+
+### Installing Python 3.8+ for Mac (Terminal)
+1. Install Homebrew if you don't have it: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+2. Install Python: `brew install python`
+3. Verify Python installation: `python3 --version`
+
+### Installing Python 3.8+ for Windows (PowerShell - run as Administrator)
+1. Option 1: winget (built into Windows 11 / Windows 10 with updates)
+    1. Install Python: `powershell winget install Python.Python.3.12`
+    2. Restart PowerShell, then verify Python installation: `python --version`
+
+2. Option 2: Manual download
+    1. Go to [python.org/downloads](https://www.python.org/downloads/)
+    2. Download the latest installer
+    3. Check "Add Python to PATH" during installation
+    4. Restart PowerShell, then verify Python installation: `python --version`
+
+
+## Simple Setup Instructions
+
+1. **Clone the repository**
+    - `git clone https://github.com/KeenBrain/awesome-ai-resources`
+    - Or download the ZIP file from GitHub and extract it.
+
+2. **Navigate to the project directory**
+    - `cd awesome-ai-resources/evals/evals_opik_tutorial_github_copilot`
+
+3. **Create a virtual environment** (recommended)
+    - Mac/Linux: `python3 -m venv venv`
+    - Windows: `python -m venv venv`
+
+4. **Activate the virtual environment**
+    - Mac/Linux: `source venv/bin/activate`
+    - Windows: `venv\Scripts\activate`
+    - Now you're in your virtual environment, and you can proceed to install the required dependencies.
+
+5. **Install dependencies** (1-2 minutes)
+    - `pip install python-dotenv opik openai`
+
+6. **Set up your API keys**
+    - Copy `.env.example` to `.env`
+    - Fill in your keys:
+```
+      OPIK_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxx
+      OPIK_PROJECT_NAME=lets_try_evals_with_opik
+      GITHUB_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+7. **Verify your setup**
+    - Mac/Linux: `python3 0_test_opik_setup.py`
+    - Windows: `python 0_test_opik_setup.py`
+    - You should see something like this:
+```
+      ✓ Opik API key: zFUyAnU90E...
+      ✓ GitHub Token: ghp_abc12...
+      🎉 Setup complete! You're ready to go.
+```
+
+## Demo Scripts
+
+Once your setup is verified, you can run the following demo scripts:
+
+- **`1_hello_opik.py`** — A simple intro to Opik, great starting point.
+- **`2_rag_demo.py`** — Demonstrates evaluations for a Retrieval-Augmented Generation (RAG) pipeline.
+- **`3_evaluation_demo.py`** — Demonstrates how to run evaluations with Opik.
+- **`4_moderation_demo.py`** — Shows how to use Opik for content moderation evaluations.
+
+Run any script with:
+- Mac/Linux: `python3 <script_name>.py`
+- Windows: `python <script_name>.py`
