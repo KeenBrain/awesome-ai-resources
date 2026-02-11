@@ -116,7 +116,7 @@ This is the same principle used in agile story point estimation. It forces hones
 **Copy and paste this into Claude:**
 
 ```
-Now, create a share button so I can share this with my colleagues.
+Add an "Export & Share" button that downloads a copy of the current HTML file with all the user's data embedded in it. When someone opens the downloaded file, it should load with that data pre-populated but still be fully editable. No server — everything stays in a single self-contained HTML file.
 ```
 
 **Why this prompt works:** A prioritization tool is only useful if the whole team can see the results. Since the app is a static HTML file with no backend, the sharing mechanism needs to be clever. The best approach is to encode the feature data directly into the URL.
