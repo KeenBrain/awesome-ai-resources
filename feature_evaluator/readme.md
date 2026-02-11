@@ -28,9 +28,8 @@ The finished app is a single HTML file. No server, no database, no installs. Dou
 
 1. **Claude** — Go to [claude.ai](https://claude.ai) and start a new conversation
 2. **A web browser** — Chrome, Safari, Firefox, Edge — anything works
-3. **The 2x2 grid reference image** — Either screenshot the grid from an existing template or describe it in words (the prompts below cover both approaches)
 
-That's it. You don't need to know HTML, CSS, JavaScript, or any programming language. Claude writes all the code. You just tell it what you want.
+That's it. No images, no templates, no reference files. The prompts below describe everything Claude needs in plain text. You don't need to know HTML, CSS, JavaScript, or any programming language. Claude writes all the code. You just tell it what you want.
 
 ---
 
