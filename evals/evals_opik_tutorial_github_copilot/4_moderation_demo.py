@@ -6,7 +6,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 import opik
-opik.configure(api_key=os.getenv("OPIK_API_KEY"), project_name=os.getenv("OPIK_PROJECT_NAME"))
+os.environ["OPIK_PROJECT_NAME"] = os.getenv("OPIK_PROJECT_NAME", "")
+opik.configure(api_key=os.getenv("OPIK_API_KEY"))
 
 # Point litellm at GitHub Models so Opik's LLM-judge metrics work
 os.environ["OPENAI_API_KEY"] = os.getenv("GITHUB_TOKEN", "")

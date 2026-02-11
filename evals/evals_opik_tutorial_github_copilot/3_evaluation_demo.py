@@ -6,7 +6,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 import opik
-opik.configure(api_key=os.getenv("OPIK_API_KEY"), project_name=os.getenv("OPIK_PROJECT_NAME"))
+os.environ["OPIK_PROJECT_NAME"] = os.getenv("OPIK_PROJECT_NAME", "")
+opik.configure(api_key=os.getenv("OPIK_API_KEY"))
 
 # Opik's LLM-judge metrics (Hallucination, AnswerRelevance) use litellm internally,
 # which needs these env vars to authenticate with GitHub Models.

@@ -7,7 +7,8 @@ load_dotenv()
 
 # Step 1: Configure Opik
 import opik
-opik.configure(api_key=os.getenv("OPIK_API_KEY"), project_name=os.getenv("OPIK_PROJECT_NAME"))
+os.environ["OPIK_PROJECT_NAME"] = os.getenv("OPIK_PROJECT_NAME", "")
+opik.configure(api_key=os.getenv("OPIK_API_KEY"))
 
 # Step 2: Set up GitHub Models via OpenAI-compatible API
 from openai import OpenAI
