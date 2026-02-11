@@ -15,8 +15,8 @@ Those scores place each feature into one of four quadrants:
 
 | | Low Value | High Value |
 |---|---|---|
-| **High Interest** | **Science Projects** — Fun to build, hard to justify | **Strategic Bets** — Novel AND needed. Prioritize. |
-| **Low Interest** | **Pass** — Skip entirely | **Workhorses** — Boring but important. Don’t overlook. |
+| **High Interest** | **Science Projects** Fun to build, hard to justify | **Strategic Bets** Novel AND needed. Prioritize. |
+| **Low Interest** | **Pass** Skip entirely | **Workhorses** Boring but important. |
 
 The app uses a Fibonacci scoring scale (1, 2, 3, 5, 8, 13) instead of a simple 1–10 range. The reasoning: with a linear scale, people tend to cluster everything around 6–8 and avoid the extremes. Fibonacci’s non-linear gaps, especially the jumps from 3→5 and 8→13, force you to make a real commitment every time you move the slider up. A “5” means something fundamentally different from a “3” in a way that a “6” never really felt different from a “7."
 
@@ -45,16 +45,16 @@ Below are the exact prompts to paste into Claude, in order. After each one, you�
 
 ```
 We’re going to create a new app to help product managers evaluate features.
-The app is a simple 2x2 grid. The Y axis is "Interesting" (low to high), and
+The app is a simple 2x2 grid. The Y axis is “Interesting” (low to high), and
 the X axis is “Valuable” (low to high). The four quadrants are:
 
-- Top-left: “Science Projects” — Fun to build, hard to justify
-- Top-right: “Strategic Bets” — Novel AND needed. Prioritize.
-- Bottom-left: “Pass” — Skip entirely
-- Bottom-right: “Workhorses” — Boring but important. Don’t overlook.
+- Top-left: “Science Projects” Fun to build, hard to justify
+- Top-right: “Strategic Bets” Novel AND needed. Prioritize
+- Bottom-left: “Pass” Skip entirely
+- Bottom-right: “Workhorses” Boring but important
 
 The app should allow product managers to score each feature using a simple
-set of controls. The app should be all front-end (tailwind, html, etc.)
+set of controls. The app should be all front-end (Tailwind, HTML, etc.)
 in a single HTML file.
 ```
 
@@ -62,7 +62,7 @@ in a single HTML file.
 
 **What to expect:** Claude will likely ask you a couple of clarifying questions before it starts building. Here’s how to answer them:
 
-- **“How should PMs score features?” ** — Choose **sliders**. They’re the most intuitive input for a spectrum like "low to high.” Each feature gets two sliders: one for Interesting and one for Valuable.
+- **“How should PMs score features?” ** — Choose **sliders**. They’re the most intuitive input for a spectrum like “low to high.” Each feature gets two sliders: one for Interesting and one for Valuable.
 - **“Should it support multiple features?” ** — Choose **yes, multiple features**. The whole point is to compare features against each other on the same grid. A single-feature version wouldn’t be very useful for prioritization.
 
 After you answer, Claude will generate the complete HTML file. Save it to your computer and open it in a browser to verify it works.
@@ -116,7 +116,7 @@ This is the same principle used in agile story point estimation. It forces hones
 **Copy and paste this into Claude:**
 
 ```
-Now, create a share button to allow me to share this with my colleagues.
+Now, create a share button so I can share this with my colleagues.
 ```
 
 **Why this prompt works:** A prioritization tool is only useful if the whole team can see the results. Since the app is a static HTML file with no backend, the sharing mechanism needs to be clever. The best approach is to encode the feature data directly into the URL.
@@ -170,7 +170,7 @@ Add an optional category dropdown when adding a feature (e.g., UX,
 Performance, Revenue, Retention) and color-code the dots by category
 instead of assigning random colors.
 ```
-Helps you spot patterns — e.g., "all our UX features are Workhorses" or "Revenue features cluster in Strategic Bets."
+Helps you spot patterns — e.g., "all our UX features are Workhorses” or “Revenue features cluster in Strategic Bets."
 
 ### Team Voting
 ```
@@ -184,7 +184,7 @@ Turns the tool into a lightweight team alignment exercise. Disagreements on a sc
 Change the color scheme to use our brand colors. The primary accent
 should be [your hex code] and the secondary should be [your hex code].
 ```
-Handy if you're presenting to stakeholders and want the tool to look polished and on-brand.
+Handy if you’re presenting to stakeholders and want the tool to look polished and on-brand.
 
 ---
 
@@ -196,7 +196,7 @@ A few principles that will help you get better results from Claude (or any AI as
 
 **Iterate one change at a time.** Each prompt should do one thing. If you ask for three changes at once and something breaks, you won't know which one caused it. Small prompts, frequent saves, quick tests.
 
-**Name things the way the app names them.** Refer to "Strategic Bets" and "Workhorses" instead of "the top-right box" and "the bottom-right box." Refer to "the Interesting slider" not "the first slider." Shared vocabulary reduces misunderstandings.
+**Name things the way the app names them.** Refer to “Strategic Bets” and “Workhorses” instead of “the top-right box” and “the bottom-right box.” Refer to “the Interesting slider,” not “the first slider.” Shared vocabulary reduces misunderstandings.
 
 **Upload screenshots when words fall short.** If you see a bug, a layout you don't like, or a design you want to match, take a screenshot and upload it. An image is often more precise than a paragraph of description.
 
