@@ -44,7 +44,7 @@
     - Or download the ZIP file from GitHub and extract it.
 
 2. **Navigate to the project directory**
-    - `cd awesome-ai-resources/evals/evals_opik_tutorial`
+    - `cd awesome-ai-resources/evals/evals_opik_tutorial_openai_api`
 
 3. **Create a virtual environment** (recommended)
     - Mac/Linux: `python3 -m venv venv`
