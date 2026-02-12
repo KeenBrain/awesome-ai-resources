@@ -2,7 +2,7 @@
 
 **Format:** Live Demo (5 min) + Interactive Decision Framework (5–10 min)
 **Audience:** Product Managers
-**Materials needed:** Laptop with internet, projector, this guide
+**Materials needed:** Laptop with internet, projector, and this guide
 
 ---
 
@@ -13,10 +13,10 @@
 You'll run a pre-built Python script that simulates an agent loop using the Claude API. The audience watches the agent reason, select tools, execute, observe results, and decide what to do next — in real time.
 
 **What the demo shows:**
-- The agent receives a task: "Find the top 3 competitors for [Product X] and summarize their pricing."
+- The agent receives a task: “Find the top 3 competitors for [Product X] and summarize their pricing."
 - It reasons about what tools to use (web search, data extraction, summarization)
 - It executes each step, observes results, and decides next actions
-- It encounters an error (one competitor's page is down) and adapts
+- It encounters an error (one competitor’s page is down) and adapts
 - It delivers a final structured summary
 
 **Why this works for PMs:** They see the agent loop from the presentation in action — Perception → Planning → Tool Selection → Execution → Observation → Evaluation → Decision.
@@ -372,7 +372,7 @@ After all scenarios, discuss as a group:
 │                                         │
 │  4. Is the ROI worth the complexity?    │
 │     NO  → Simplify the problem first    │
-│     YES → Build an Agent               │
+│     YES → Build an Agent                │
 │           (with human-in-the-loop!)     │
 └─────────────────────────────────────────┘
 ```
