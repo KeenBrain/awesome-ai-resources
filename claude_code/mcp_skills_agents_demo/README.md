@@ -70,4 +70,3 @@ output/           # Pipeline artifacts generated at runtime
 | Variable | Description |
 |---|---|
 | `LINEAR_API_KEY` | Linear API key (if not using global MCP config) |
-| `DISCORD_WEBHOOK_URL` | Discord webhook for pipeline notifications |
