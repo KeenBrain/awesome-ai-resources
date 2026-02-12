@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mini PM-to-Production Pipeline Demo
 
-## Getting Started
+A demo project showcasing a mini PM-to-Production pipeline built with Claude Code skills, agents, and MCP servers. It simulates a real-world workflow where product managers analyze user interviews, mine analytics data, prioritize features using RICE scoring, and create Linear tickets -- all orchestrated by a single `/lfg` command.
 
-First, run the development server:
+## Pipeline Flow
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+/lfg
+ ├── 1. Extract Interview Insights   → output/interview-insights.md
+ ├── 2. Extract Analytics Insights    → output/analytics-insights.md
+ ├── 3. Prioritize Features (RICE)    → output/prioritized-features.md
+ └── 4. Create Linear Tickets         → Linear workspace
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+.claude/
+  skills/       # 5 skill files (the pipeline steps)
+  agents/         # 4 specialized sub-agents
+data/
+  interviews/     # 7 mock user interview transcripts (.md)
+  analytics/      # SQLite DB + seed script for product analytics
+output/           # Pipeline artifacts generated at runtime
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Skills (`.claude/skills/`)
 
-## Learn More
+| Command | Description |
+|---|---|
+| `/lfg` | Master orchestrator -- runs the full pipeline end-to-end |
+| `/extract-interview-insights` | Analyze user interview transcripts for themes and pain points |
+| `/extract-analytics-insights` | Query the SQLite analytics database for usage patterns |
+| `/prioritize-features` | RICE scoring and feature ranking |
+| `/manage-linear-tickets` | Create or update Linear tickets from prioritized features |
 
-To learn more about Next.js, take a look at the following resources:
+## Agents (`.claude/agents/`)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Agent | Role |
+|---|---|
+| `interview-analyst` | Qualitative UX researcher for theme extraction and affinity mapping |
+| `data-analyst` | Quantitative analyst with SQL expertise for analytics queries |
+| `product-strategist` | Senior PM for RICE prioritization and feature scoring |
+| `project-manager` | Technical PM for Linear ticket management |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## MCP Servers (`.mcp.json`)
 
-## Deploy on Vercel
+- **Filesystem** -- Read/write access to `data/interviews/` and `output/`
+- **SQLite** -- Query access to `data/analytics/product_analytics.db`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Setup
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Copy the environment file and fill in your keys:
+   ```bash
+   cp .env.example .env
+   ```
+
+2. (Optional) Regenerate the analytics database:
+   ```bash
+   npx tsx data/analytics/seed-database.ts
+   ```
+
+3. Run the full pipeline in Claude Code:
+   ```
+   /lfg
+   ```
+
+## Environment Variables
+
+| Variable | Description |
+|---|---|
+| `LINEAR_API_KEY` | Linear API key (if not using global MCP config) |
+| `DISCORD_WEBHOOK_URL` | Discord webhook for pipeline notifications |

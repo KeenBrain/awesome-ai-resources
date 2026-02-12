@@ -1,3 +1,12 @@
+---
+name: extract-analytics-insights
+description: "Query the SQLite analytics database and extract data-driven product insights including usage patterns, funnel conversion, NPS, and feature health."
+triggers:
+  - "extract analytics insights"
+  - "analyze analytics"
+  - "query analytics"
+---
+
 # Extract Analytics Insights
 
 Query the SQLite analytics database and extract data-driven product insights.
@@ -64,7 +73,7 @@ Data range: [start] to [end]
 ## Feature Health Scorecard
 | Feature | Views | Errors | Abandon Rate | Health |
 |---------|-------|--------|--------------|--------|
-| [name] | X | Y | Z% | 🔴/🟡/🟢 |
+| [name] | X | Y | Z% | Red/Yellow/Green |
 
 ## Funnel Analysis
 [Stage-by-stage breakdown with conversion rates]

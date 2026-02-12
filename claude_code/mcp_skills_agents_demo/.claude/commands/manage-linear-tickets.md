@@ -1,3 +1,12 @@
+---
+name: manage-linear-tickets
+description: "Create or update Linear tickets for the top prioritized features with RICE scores, evidence, and acceptance criteria."
+triggers:
+  - "manage linear tickets"
+  - "create linear tickets"
+  - "update linear tickets"
+---
+
 # Manage Linear Tickets
 
 Create or update Linear tickets for the top prioritized features.

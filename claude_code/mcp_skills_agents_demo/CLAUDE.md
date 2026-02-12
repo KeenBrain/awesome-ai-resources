@@ -1,20 +1,20 @@
 # PM-to-Production Pipeline Demo
 
 ## Project Overview
-This project demonstrates a PM-to-Production pipeline using Claude commands. It simulates a real-world workflow where product managers can analyze user interviews, mine analytics data, prioritize features using RICE scoring, and create Linear tickets.
+This project demonstrates a PM-to-Production pipeline using Claude skills. It simulates a real-world workflow where product managers can analyze user interviews, mine analytics data, prioritize features using RICE scoring, and create Linear tickets.
 
-The `/lfg` command orchestrates: user interview analysis → analytics data mining → RICE prioritization → Linear ticket creation.
+The `/lfg` skill orchestrates: user interview analysis → analytics data mining → RICE prioritization → Linear ticket creation.
 
 ## Project Structure
 - `data/interviews/` — 7 mock user interview transcripts (.md with YAML frontmatter)
 - `data/analytics/` — SQLite DB with product analytics (seed-database.ts to regenerate)
 - `output/` — Pipeline artifacts generated at runtime
-- `.claude/commands/` — 6 skill files that form the pipeline
+- `.claude/skills/` — 5 skill files that form the pipeline
 
 ## Key Commands
 - `npx tsx data/analytics/seed-database.ts` — Regenerate analytics DB
 
-## Pipeline Skills (in .claude/commands/)
+## Pipeline Skills (in .claude/skills/)
 - `/lfg` — Master orchestrator, runs full pipeline
 - `/extract-interview-insights` — Analyze user interviews
 - `/extract-analytics-insights` — Query analytics database

@@ -1,3 +1,12 @@
+---
+name: extract-interview-insights
+description: "Analyze all user interview transcripts and extract actionable product insights including themes, pain points, and severity assessments."
+triggers:
+  - "extract interview insights"
+  - "analyze interviews"
+  - "interview analysis"
+---
+
 # Extract Interview Insights
 
 Analyze all user interview transcripts and extract actionable product insights.

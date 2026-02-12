@@ -1,3 +1,12 @@
+---
+name: prioritize-features
+description: "Read both insight reports and apply RICE scoring to rank all identified features, selecting top non-overlapping features for implementation."
+triggers:
+  - "prioritize features"
+  - "rice scoring"
+  - "rank features"
+---
+
 # Prioritize Features (RICE Scoring)
 
 Read both insight reports and apply RICE scoring to rank all identified features.
@@ -38,7 +47,7 @@ Based on code scope:
 - Complexity estimate
 - Score: 1 = single simple file change, 10 = major architectural change
 
-### RICE Score = (Reach × Impact × Confidence) / Effort
+### RICE Score = (Reach x Impact x Confidence) / Effort
 
 4. **Tag each feature** with:
    - Files to modify (specific component paths)
