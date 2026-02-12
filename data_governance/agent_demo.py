@@ -9,7 +9,7 @@ Requirements: pip install anthropic
 Set ANTHROPIC_API_KEY environment variable before running.
 """
 
-import anthropic
+# import anthropic
 import json
 import time
 
