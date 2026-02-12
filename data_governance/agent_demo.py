@@ -21,7 +21,7 @@ import time
 # ============================================================
 # CONFIGURATION
 # ============================================================
-PRODUCT_NAME = "Microsoft Catalyst 365"
+PRODUCT_NAME = "Microsoft OptiForce 365"
 PRODUCT_DESC = "an enterprise workforce optimization platform"
 
 # Parse flags
