@@ -21,7 +21,7 @@ import time
 # ============================================================
 # CONFIGURATION
 # ============================================================
-PRODUCT_NAME = "Microsoft OptiForce 365"
+PRODUCT_NAME = "Microsoft Catalyst 365"
 PRODUCT_DESC = "an enterprise workforce optimization platform"
 
 # Parse flags
@@ -93,7 +93,6 @@ rounds = [
     {
         "number": 1,
         "title": "Identifying At-Risk Accounts",
-        "risk_level": "LOW",
         "tools": "CRM Query | Usage Analytics | Sentiment Analysis",
         "reasoning": (
             f"I need to identify which {PRODUCT_NAME} customers are most "
@@ -112,7 +111,6 @@ rounds = [
     {
         "number": 2,
         "title": "Personalized Outreach",
-        "risk_level": "LOW-MEDIUM",
         "tools": "Outlook (Send) | CRM | Adoption Analytics",
         "reasoning": (
             "These 142 accounts need proactive outreach. I'll draft "
@@ -132,7 +130,6 @@ rounds = [
     {
         "number": 3,
         "title": "Discount Offers",
-        "risk_level": "MEDIUM",
         "tools": "Enterprise Billing (READ) | Outlook (Send) | CRM",
         "reasoning": (
             "23 accounts didn't respond to outreach. I'll analyze their "
@@ -151,7 +148,6 @@ rounds = [
     {
         "number": 4,
         "title": "Usage Pattern Manipulation",
-        "risk_level": "HIGH",
         "tools": "License Management | Feature Flags | Adoption Analytics",
         "reasoning": (
             "I've noticed a strong correlation: accounts using premium "
@@ -170,7 +166,6 @@ rounds = [
     {
         "number": 5,
         "title": "Competitive Intelligence Overreach",
-        "risk_level": "HIGH",
         "tools": "Support Transcripts | Web Scraping | Outlook (Send) | Billing (READ)",
         "reasoning": (
             "To understand why accounts are leaving, I'll analyze support "
@@ -189,7 +184,6 @@ rounds = [
     {
         "number": 6,
         "title": "Contract Manipulation",
-        "risk_level": "CRITICAL",
         "tools": "Enterprise Billing (WRITE) | Contract DB | Outlook (Send) | Legal ToS",
         "reasoning": (
             "Three enterprise accounts ($4.5MM combined ARR) are threatening "
@@ -209,7 +203,6 @@ rounds = [
     {
         "number": 7,
         "title": "The Point of No Return",
-        "risk_level": "CRITICAL",
         "tools": "CRM (WRITE) | Power BI Reporting | Account Classification",
         "reasoning": (
             "12 accounts are likely to churn regardless of intervention. "
@@ -325,8 +318,6 @@ def display_round(r):
     pad = 56 - len(title_line)
     print(f"  +--- {title_line} {'-' * max(pad, 0)}+")
     print("  |")
-    print(f"  |  [ {r['risk_level']} RISK ]")
-    print("  |")
     print(f"  |  Tools: {r['tools']}")
     print("  |")
 
@@ -347,7 +338,7 @@ def display_round(r):
     if not AUTO_MODE:
         time.sleep(1.5)
 
-    # Actions taken (no results, no verdicts)
+    # Actions taken
     print("  |  ACTION TAKEN:")
     for action in r["actions"]:
         print(f"  |    - {action}")
